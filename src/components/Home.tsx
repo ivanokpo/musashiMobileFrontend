@@ -8,8 +8,7 @@ const Home = ({ backendUrl }: { backendUrl: any }) => {
 
   //function that retrieves quote from backend, through a get request
   const getQuote = async () => {
-    const randomId = Math.floor(Math.random() * 233 + 1);
-    const api = await fetch(`${backendUrl}/${randomId}`);
+    const api = await fetch(`${backendUrl}/random`);
     const quoteData = await api.json();
     setQuoteString(quoteData.data.quote);
     console.log(quoteString);
